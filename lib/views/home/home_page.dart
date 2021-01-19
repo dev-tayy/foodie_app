@@ -5,6 +5,7 @@ import 'package:foodie_app/views/home/cart_screen.dart';
 import 'package:foodie_app/views/home/favorites_screen.dart';
 import 'package:foodie_app/views/home/history_screen.dart';
 import 'package:foodie_app/components/order_item.dart';
+import 'package:foodie_app/views/home/search_screen.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -75,11 +76,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  TextEditingController _searchTextController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     _tabController = new TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _searchTextController.dispose();
+    super.dispose();
   }
 
   @override
@@ -126,30 +134,38 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   YMargin(hp(4)),
                   TextField(
+                    controller: _searchTextController,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                        size: 25,
-                        color: AppColors.black,
+                      prefixIcon:
+                          Icon(Icons.search, size: 25, color: AppColors.black),
+                      suffixIcon: GestureDetector(
+                        child:
+                            Icon(Icons.send, size: 25, color: AppColors.black),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SearchScreen(
+                                      searchText: _searchTextController.text)));
+                        },
                       ),
-                      focusColor: AppColors.black,
                       border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(30)),
-                      filled: true,
-                      isDense: false,
-                      hintText: 'Search',
                       hintStyle: TextStyle(
                           fontFamily: 'SF Pro Rounded',
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
                           color: AppColors.black),
-                      fillColor: AppColors.greyShade3,
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                            BorderSide(color: AppColors.greyShade3, width: 0.5),
-                      ),
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide(
+                              color: AppColors.greyShade3, width: 0.5)),
+                      focusColor: AppColors.black,
+                      filled: true,
+                      isDense: false,
+                      hintText: 'Search',
+                      fillColor: AppColors.greyShade3,
                     ),
                   ),
                 ],

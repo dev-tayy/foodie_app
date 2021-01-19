@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodie_app/components/app_drawer.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/views/home/home_page.dart';
+import 'package:foodie_app/views/home/search_screen.dart';
 import 'package:foodie_app/views/login_screen.dart';
 import 'package:foodie_app/views/offers_promo.dart';
 import 'package:foodie_app/views/orders.dart';
@@ -12,7 +13,6 @@ import 'package:foodie_app/views/splash.dart';
 import 'package:foodie_app/views/onboarding.dart';
 
 void main() {
-  //ClassBuilder.registerClasses();
   runApp(MyApp());
 }
 
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         LoginPage.id: (context) => LoginPage(),
         AppDrawer.id: (context) => AppDrawer(),
         HomePage.id: (context) => HomePage(),
+        SearchScreen.id: (context) => SearchScreen(),
         ProfilePage.id: (context) => ProfilePage(),
         OrdersPage.id: (context) => OrdersPage(),
         OffersPromoPage.id: (context) => OffersPromoPage(),
