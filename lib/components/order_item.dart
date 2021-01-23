@@ -34,49 +34,45 @@ class OrderItem extends StatelessWidget {
             overflow: Overflow.visible,
             alignment: AlignmentDirectional.center,
             children: [
-              Expanded(
-                child: Container(
-                  width: containerWidth,
-                  height: containerHeight,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+              Container(
+                width: containerWidth,
+                height: containerHeight,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: image,
-                      height: imageHeight,
-                      width: imageWidth,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image(
+                    image: image,
+                    height: imageHeight,
+                    width: imageWidth,
+                  ),
+                  YMargin(20),
+                  Text(
+                    foodLabel,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 22,
+                      color: AppColors.black,
                     ),
-                    YMargin(20),
-                    Text(
-                      foodLabel,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Rounded',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 22,
-                        color: AppColors.black,
-                      ),
+                  ),
+                  YMargin(20),
+                  Text(
+                    foodPrice,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontWeight: FontWeight.w900,
+                      fontSize: 17,
+                      color: AppColors.primaryColor,
                     ),
-                    YMargin(20),
-                    Text(
-                      foodPrice,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Rounded',
-                        fontWeight: FontWeight.w900,
-                        fontSize: 17,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
