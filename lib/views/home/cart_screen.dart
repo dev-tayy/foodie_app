@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_app/components/cart_item.dart';
+import 'package:foodie_app/components/raised_button.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 class CartScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class CartScreen extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               child: Row(
@@ -43,7 +44,7 @@ class CartScreen extends StatelessWidget {
                 ],
               ),
             ),
-            YMargin(40),
+            YMargin(hp(4)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -53,99 +54,18 @@ class CartScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 12, fontFamily: 'SF Pro Text'))
               ],
             ),
-            YMargin(15),
-            Slidable(
-              actionPane: SlidableDrawerActionPane(),
-              direction: Axis.horizontal,
-              actionExtentRatio: 0.2,
-              secondaryActions: <Widget>[
-                IconSlideAction(
-                  icon: Icons.favorite_border,
-                  color: AppColors.white,
-                  decoration: BoxDecoration(color: Color(0xFFDF2C2C), shape: BoxShape.circle, border:  ),
-                ),
-                IconSlideAction(
-                  icon: Icons.delete,
-                  color: AppColors.white,
-                  decoration: BoxDecoration(color: Color(0xFFDF2C2C),),
-                ),
-              ],
-              child: GestureDetector(
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  shadowColor: Color(0xFFF4F4F7),
-                  color: AppColors.white,
-                  child: ListTile(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      leading: Image(
-                        image: AssetImage('assets/images/food1.png'),
-                      ),
-                      title: Text(
-                        'Veggie tomato mix',
-                        style: TextStyle(
-                          fontFamily: 'SF Pro Rounded',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'N1,900',
-                        style: TextStyle(
-                          fontFamily: 'SF Pro Rounded',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15,
-                          color: AppColors.primaryColor,
-                        ),
-                      ),
-                      trailing: Container(
-                          height: 50,
-                          width: 60,
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 20,
-                                width: 20,
-                                child: FittedBox(
-                                  child: FloatingActionButton(
-                                    onPressed: () {},
-                                    backgroundColor: AppColors.primaryColor,
-                                    elevation: 0,
-                                    child: Icon(
-                                      Icons.remove,
-                                      color: AppColors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              XMargin(5),
-                              Text(
-                                '1',
-                                style: TextStyle(
-                                    fontFamily: 'SF Pro Rounded', fontSize: 18),
-                              ),
-                              XMargin(5),
-                              Container(
-                                height: 20,
-                                width: 20,
-                                child: FittedBox(
-                                  child: FloatingActionButton(
-                                    onPressed: () {},
-                                    backgroundColor: AppColors.primaryColor,
-                                    elevation: 0,
-                                    child: Icon(
-                                      Icons.add,
-                                      color: AppColors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ))),
-                ),
-              ),
+            YMargin(hp(4)),
+            CartItem(),
+            YMargin(hp(3)),
+            CartItem(),
+            YMargin(hp(3)),
+            CartItem(),
+            YMargin(hp(20)),
+            ButtonWidget(
+              buttonColor: AppColors.primaryColor,
+              label: "Proceed to Checkout",
+              onPressed: () {},
+              textColor: AppColors.white,
             )
           ],
         ),
