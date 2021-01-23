@@ -37,19 +37,19 @@ class _HomePageState extends State<HomePage> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text(''),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              title: Text(''),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
-              title: Text(''),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
-              title: Text(''),
+              label: '',
             ),
           ],
         ),
@@ -231,11 +231,15 @@ class _HomeScreenState extends State<HomeScreen>
                     child: Row(
                       children: [
                         OrderItem(
+                          containerWidth: wp(50),
+                          containerHeight: hp(30),
                           image: AssetImage('assets/images/food1.png'),
                           foodLabel: 'Veggie\ntomato mix',
                           foodPrice: 'N1,900',
                         ),
                         OrderItem(
+                          containerWidth: wp(50),
+                          containerHeight: hp(30),
                           image: AssetImage('assets/images/food2.png'),
                           foodLabel: 'Veggie\ntomato mix',
                           foodPrice: 'N1,900',
@@ -244,16 +248,22 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                   ),
                   OrderItem(
+                    containerWidth: wp(50),
+                    containerHeight: hp(30),
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',
                   ),
                   OrderItem(
+                    containerWidth: wp(50),
+                    containerHeight: hp(30),
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',
                   ),
                   OrderItem(
+                    containerWidth: wp(50),
+                    containerHeight: hp(30),
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',

@@ -10,15 +10,18 @@ class OrderItem extends StatelessWidget {
       {Key key,
       @required this.image,
       @required this.foodLabel,
-      @required this.foodPrice})
+      @required this.foodPrice, @required this.containerHeight, @required this.containerWidth, this.imageHeight, this.imageWidth})
       : super(key: key);
   final ImageProvider image;
   final String foodLabel;
   final String foodPrice;
+  final double containerHeight;
+  final double containerWidth;
+  final double imageHeight;
+  final double imageWidth;
   @override
   Widget build(BuildContext context) {
-    final Function wp = Screen(context).wp;
-    final Function hp = Screen(context).hp;
+   
     return GestureDetector(
       onTap: () {
         showBottomSheet(context);
@@ -27,24 +30,28 @@ class OrderItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(
+            fit: StackFit.passthrough,
             overflow: Overflow.visible,
-            alignment: AlignmentDirectional.topCenter,
+            alignment: AlignmentDirectional.center,
             children: [
-              Container(
-                width: wp(50),
-                height: hp(32),
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(30),
+              Expanded(
+                child: Container(
+                  width: containerWidth,
+                  height: containerHeight,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
               ),
-              Positioned(
-                bottom: 35,
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image(
                       image: image,
+                      height: imageHeight,
+                      width: imageWidth,
                     ),
                     YMargin(20),
                     Text(

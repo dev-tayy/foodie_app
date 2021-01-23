@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_app/components/order_item.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
 import 'package:responsive_screen/responsive_screen.dart';
@@ -17,10 +18,11 @@ class SearchScreen extends StatelessWidget {
         body: Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: AppColors.backgroundShade1,
+      color: AppColors.backgroundShade2,
       child: Column(
         children: [
           Container(
+            
             padding: EdgeInsets.only(
               left: wp(7),
               right: wp(7),
@@ -55,37 +57,39 @@ class SearchScreen extends StatelessWidget {
               bottom: hp(3),
             ),
             decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.greyShade6,
                 borderRadius: BorderRadius.circular(30)),
-            child: Expanded(
-              child: ListView(
-                children: [
-                  Text(
-                    'Found 6 Results',
-                    style: TextStyle(
-                        fontFamily: 'SF Pro Rounded',
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  StaggeredGridView.countBuilder(
+            child: Column(
+              children: [
+                Text(
+                  'Found 6 Results',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600),
+                ),
+                Expanded(
+                  child: StaggeredGridView.countBuilder(
+                    physics: BouncingScrollPhysics(),
                     crossAxisCount: 4,
                     itemCount: 8,
-                    itemBuilder: (BuildContext context, int index) =>
-                        new Container(
-                            color: Colors.green,
-                            child: new Center(
-                              child: new CircleAvatar(
-                                backgroundColor: Colors.white,
-                                child: new Text('$index'),
-                              ),
-                            )),
+                    itemBuilder: (BuildContext context, int index) => OrderItem(
+                      containerWidth: wp(38),
+                      containerHeight: hp(25),
+                      imageHeight: 130.0,
+                      imageWidth: 130.0,
+                      image: AssetImage('assets/images/food1.png'),
+                      foodLabel: 'Veggie\ntomato mix',
+                      foodPrice: 'N1,900',
+                    ),
                     staggeredTileBuilder: (int index) =>
-                        new StaggeredTile.count(2, index.isEven ? 2 : 1),
-                    mainAxisSpacing: 4.0,
-                    crossAxisSpacing: 4.0,
-                  )
-                ],
-              ),
+                        new StaggeredTile.count(2, index.isEven ? 3 : 3.5),
+                    mainAxisSpacing: 5.0,
+                    crossAxisSpacing: 9.0,
+
+                  ),
+                )
+              ],
             ),
           )
         ],
