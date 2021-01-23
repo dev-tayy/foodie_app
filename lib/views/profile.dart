@@ -4,7 +4,7 @@ import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
-enum DeliveryOptions { card, bankaccount, abeg }
+enum PaymentOptions { card, bankaccount, abeg }
 
 class ProfilePage extends StatefulWidget {
   static String id = 'profile_page';
@@ -14,7 +14,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  DeliveryOptions _deliveryOption;
+  PaymentOptions _paymentOptions;
   @override
   Widget build(BuildContext context) {
     final Function wp = Screen(context).wp;
@@ -173,11 +173,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             Radio(
                               focusColor: AppColors.iconYellow,
                               activeColor: AppColors.iconYellow,
-                              groupValue: _deliveryOption,
-                              value: DeliveryOptions.card,
-                              onChanged: (DeliveryOptions value) {
+                              groupValue: _paymentOptions,
+                              value: PaymentOptions.card,
+                              onChanged: (PaymentOptions value) {
                                 setState(() {
-                                  _deliveryOption = value;
+                                  _paymentOptions = value;
                                 });
                               },
                             ),
@@ -219,11 +219,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             Radio(
                               focusColor: AppColors.iconPink,
                               activeColor: AppColors.iconPink,
-                              groupValue: _deliveryOption,
-                              value: DeliveryOptions.bankaccount,
-                              onChanged: (DeliveryOptions value) {
+                              groupValue: _paymentOptions,
+                              value: PaymentOptions.bankaccount,
+                              onChanged: (PaymentOptions value) {
                                 setState(() {
-                                  _deliveryOption = value;
+                                  _paymentOptions = value;
                                 });
                               },
                             ),
@@ -264,11 +264,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             Radio(
                               focusColor: AppColors.iconPurple,
                               activeColor: AppColors.iconPurple,
-                              groupValue: _deliveryOption,
-                              value: DeliveryOptions.abeg,
-                              onChanged: (DeliveryOptions value) {
+                              groupValue: _paymentOptions,
+                              value: PaymentOptions.abeg,
+                              onChanged: (PaymentOptions value) {
                                 setState(() {
-                                  _deliveryOption = value;
+                                  _paymentOptions = value;
                                 });
                               },
                             ),
