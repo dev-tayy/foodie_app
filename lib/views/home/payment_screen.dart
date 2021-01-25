@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_app/components/raised_button.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
+import 'package:foodie_app/components/raised_button.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 enum PaymentOptions { card, bankAccount, abeg }

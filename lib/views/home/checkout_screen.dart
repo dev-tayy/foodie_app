@@ -3,7 +3,6 @@ import 'package:foodie_app/components/raised_button.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
 import 'package:foodie_app/components/delivery_dialog.dart';
-import 'package:foodie_app/views/home/payment_screen.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 enum DeliveryOptions { doorDelivery, pickUp }

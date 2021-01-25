@@ -4,8 +4,6 @@ import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
-enum PaymentOptions { card, bankaccount, abeg }
-
 class ProfilePage extends StatefulWidget {
   static String id = 'profile_page';
 
@@ -14,7 +12,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  PaymentOptions _paymentOptions;
   @override
   Widget build(BuildContext context) {
     final Function wp = Screen(context).wp;
@@ -162,6 +159,24 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: AppColors.black,
                   ),
                 ),
+                trailing: Icon(Icons.arrow_forward_ios, color: AppColors.black),
+              ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              shadowColor: Color(0xFFF4F4F7),
+              color: AppColors.white,
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                title: Text('Help',
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                      color: AppColors.black,
+                    )),
                 trailing: Icon(Icons.arrow_forward_ios, color: AppColors.black),
               ),
             ),

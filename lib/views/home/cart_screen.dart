@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_app/components/cart_item.dart';
-import 'package:foodie_app/components/raised_button.dart';
 import 'package:foodie_app/utils/colors.dart';
 import 'package:foodie_app/utils/margin.dart';
-import 'package:foodie_app/views/home/checkout_screen.dart';
+import 'package:foodie_app/components/cart_item.dart';
+import 'package:foodie_app/components/raised_button.dart';
 import 'package:responsive_screen/responsive_screen.dart';
+import 'package:foodie_app/views/home/checkout_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key key}) : super(key: key);
