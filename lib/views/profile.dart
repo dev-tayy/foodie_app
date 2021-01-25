@@ -52,233 +52,137 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             YMargin(10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Information',
-                  style: TextStyle(
-                      fontFamily: 'SF Pro Text',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17),
-                ),
-                YMargin(10),
-                Container(
-                    padding: EdgeInsets.all(15),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  child: Image(
-                                    image:
-                                        AssetImage('assets/images/profile.png'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Yusuf Ahmed',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                YMargin(10),
-                                Text(
-                                  'atytjani@gmail.com',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 13,
-                                      color: AppColors.grey),
-                                ),
-                                YMargin(10),
-                                Text(
-                                  '1, Capt Davies Road, Isefun,\nAyobo-Ipaja, Lagos State.',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 13,
-                                      color: AppColors.grey),
-                                ),
-                              ],
-                            ),
-                            Icon(Icons.edit)
-                          ],
-                        )
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(20)))
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Payment Method',
-                  style: TextStyle(
-                      fontFamily: 'SF Pro Text',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17),
-                ),
-                YMargin(10),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(20),
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Profile Details',
+                    style: TextStyle(
+                        fontFamily: 'SF Pro Text',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 17),
                   ),
-                  child: Column(
+                  InkWell(
+                    child: Text(
+                      'change',
+                      style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          color: Color(0xFFF47B0A),
+                          fontSize: 15),
+                    ),
+                  ),
+                ],
+              ),
+              YMargin(10),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                shadowColor: Color(0xFFF4F4F7),
+                color: AppColors.white,
+                child: ListTile(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  leading: Image(
+                    image: AssetImage('assets/images/profile.png'),
+                  ),
+                  title: Text(
+                    'Yusuf Ahmed',
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                      color: AppColors.black,
+                    ),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ListTile(
-                        title: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: AppColors.iconYellow,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Icon(
-                                    Icons.credit_card,
-                                    color: AppColors.white,
-                                  ),
-                                  padding: EdgeInsets.all(5),
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                XMargin(10),
-                                Text(
-                                  'Card',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 17,
-                                      color: AppColors.black),
-                                ),
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        ),
-                        leading: Column(
-                          children: [
-                            Radio(
-                              focusColor: AppColors.iconYellow,
-                              activeColor: AppColors.iconYellow,
-                              groupValue: _paymentOptions,
-                              value: PaymentOptions.card,
-                              onChanged: (PaymentOptions value) {
-                                setState(() {
-                                  _paymentOptions = value;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
+                      Divider(),
+                      Text(
+                        'atytjani@gmail.com',
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Text',
+                            fontSize: 13,
+                            color: AppColors.grey),
                       ),
-                      ListTile(
-                        title: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: AppColors.iconPink,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Icon(
-                                    Icons.business,
-                                    color: AppColors.white,
-                                  ),
-                                  padding: EdgeInsets.all(5),
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                XMargin(10),
-                                Text(
-                                  'Bank account',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 17,
-                                      color: AppColors.black),
-                                ),
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        ),
-                        leading: Column(
-                          children: [
-                            Radio(
-                              focusColor: AppColors.iconPink,
-                              activeColor: AppColors.iconPink,
-                              groupValue: _paymentOptions,
-                              value: PaymentOptions.bankaccount,
-                              onChanged: (PaymentOptions value) {
-                                setState(() {
-                                  _paymentOptions = value;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
+                      Divider(),
+                      Text(
+                        '07063640670',
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Text',
+                            fontSize: 13,
+                            color: AppColors.grey),
                       ),
-                      ListTile(
-                        title: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: AppColors.iconPurple,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Image(
-                                    image: AssetImage('assets/images/abeg.png'),
-                                  ),
-                                  padding: EdgeInsets.all(5),
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                XMargin(10),
-                                Text(
-                                  'Abeg',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 17,
-                                      color: AppColors.black),
-                                ),
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        ),
-                        leading: Column(
-                          children: [
-                            Radio(
-                              focusColor: AppColors.iconPurple,
-                              activeColor: AppColors.iconPurple,
-                              groupValue: _paymentOptions,
-                              value: PaymentOptions.abeg,
-                              onChanged: (PaymentOptions value) {
-                                setState(() {
-                                  _paymentOptions = value;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
+                      Divider(),
+                      Text(
+                        '1, Capt Davies Road, Isefun, Ayobo-Ipaja, Lagos State.',
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Text',
+                            fontSize: 13,
+                            color: AppColors.grey),
                       ),
                     ],
                   ),
                 ),
-              ],
+              ),
+            ]),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              shadowColor: Color(0xFFF4F4F7),
+              color: AppColors.white,
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                title: Text(
+                  'Orders',
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Rounded',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: AppColors.black,
+                  ),
+                ),
+                trailing: Icon(Icons.arrow_forward_ios, color: AppColors.black),
+              ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              shadowColor: Color(0xFFF4F4F7),
+              color: AppColors.white,
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                title: Text(
+                  'FAQ',
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Rounded',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: AppColors.black,
+                  ),
+                ),
+                trailing: Icon(Icons.arrow_forward_ios, color: AppColors.black),
+              ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              shadowColor: Color(0xFFF4F4F7),
+              color: AppColors.white,
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                title: Text(
+                  'Sign out',
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Rounded',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: AppColors.black,
+                  ),
+                ),
+                trailing: Icon(Icons.arrow_forward_ios, color: AppColors.black),
+              ),
             ),
             YMargin(hp(10)),
             ButtonWidget(
