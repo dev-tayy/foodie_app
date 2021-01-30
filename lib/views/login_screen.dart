@@ -64,39 +64,35 @@ class _LoginPageState extends State<LoginPage>
               child: Column(
                 children: [
                   YMargin(100),
-                  Expanded(
-                    child: Image(
-                      image: AssetImage('assets/images/cheflogo.png'),
-                    ),
+                  Image(
+                    image: AssetImage('assets/images/cheflogo.png'),
                   ),
-                  Expanded(
-                    child: SafeArea(
-                      child: TabBar(
-                        unselectedLabelColor: AppColors.black,
-                        labelColor: AppColors.black,
-                        indicatorColor: AppColors.primaryColor,
-                        indicator: UnderlineTabIndicator(
-                          insets: EdgeInsets.symmetric(horizontal: 30.0),
-                          borderSide: BorderSide(
-                            width: 2.0,
-                            color: AppColors.primaryColor,
-                          ),
+                  SafeArea(
+                    child: TabBar(
+                      unselectedLabelColor: AppColors.black,
+                      labelColor: AppColors.black,
+                      indicatorColor: AppColors.primaryColor,
+                      indicator: UnderlineTabIndicator(
+                        insets: EdgeInsets.symmetric(horizontal: 30.0),
+                        borderSide: BorderSide(
+                          width: 2.0,
+                          color: AppColors.primaryColor,
                         ),
-                        labelStyle: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'SF Pro Text',
-                            fontWeight: FontWeight.w500),
-                        tabs: [
-                          Tab(
-                            text: 'Login',
-                          ),
-                          Tab(
-                            text: 'Sign Up',
-                          )
-                        ],
-                        controller: _tabController,
-                        indicatorSize: TabBarIndicatorSize.tab,
                       ),
+                      labelStyle: TextStyle(
+                          fontSize: 18,
+                          fontFamily: 'SF Pro Text',
+                          fontWeight: FontWeight.w500),
+                      tabs: [
+                        Tab(
+                          text: 'Login',
+                        ),
+                        Tab(
+                          text: 'Sign Up',
+                        )
+                      ],
+                      controller: _tabController,
+                      indicatorSize: TabBarIndicatorSize.tab,
                     ),
                   ),
                 ],
