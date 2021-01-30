@@ -10,11 +10,7 @@ class OrderItem extends StatelessWidget {
       {Key key,
       @required this.image,
       @required this.foodLabel,
-      @required this.foodPrice,
-      @required this.containerHeight,
-      @required this.containerWidth,
-      this.imageHeight,
-      this.imageWidth})
+      @required this.foodPrice, @required this.containerHeight, @required this.containerWidth, this.imageHeight, this.imageWidth})
       : super(key: key);
   final ImageProvider image;
   final String foodLabel;
@@ -25,6 +21,7 @@ class OrderItem extends StatelessWidget {
   final double imageWidth;
   @override
   Widget build(BuildContext context) {
+   
     return GestureDetector(
       onTap: () {
         showBottomSheet(context);
@@ -163,7 +160,7 @@ showBottomSheet(BuildContext context) {
                 ],
               );
             }),
-            Expanded(child: YMargin(hp(6))),
+            YMargin(hp(6)),
             Center(
               child: Container(
                 child: Column(
@@ -193,7 +190,7 @@ showBottomSheet(BuildContext context) {
                 ),
               ),
             ),
-            Expanded(child: YMargin(hp(6))),
+            YMargin(hp(6)),
             Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -61,7 +61,7 @@ class CartScreen extends StatelessWidget {
             CartItem(),
             YMargin(hp(3)),
             CartItem(),
-            Expanded(child: YMargin(hp(20))),
+            YMargin(hp(20)),
             ButtonWidget(
               buttonColor: AppColors.primaryColor,
               label: "Proceed to Checkout",
@@ -70,7 +70,7 @@ class CartScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => CheckoutScreen()));
               },
               textColor: AppColors.white,
-            ),
+            )
           ],
         ),
       ),
