@@ -69,30 +69,32 @@ class _SplashScreenState extends State<SplashScreen>
               radius: hp(14),
               child: Padding(
                 padding: const EdgeInsets.only(top: 40),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      child: Image(
-                        image: AssetImage('assets/images/applogo.png'),
+                child: FittedBox(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: Image(
+                          image: AssetImage('assets/images/applogo.png'),
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Food for Everyone',
-                      style: TextStyle(
-                          fontFamily: 'SF Pro Rounded',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10,
-                          color: AppColors.primaryColor),
-                    ),
-                    SizedBox(height: animation.value * 30.0),
-                    Container(
-                      child: CircularProgressIndicator(
-                        backgroundColor: AppColors.primaryColor,
+                      Text(
+                        'Food for Everyone',
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Rounded',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10,
+                            color: AppColors.primaryColor),
                       ),
-                    )
-                  ],
+                      SizedBox(height: animation.value * 30.0),
+                      Container(
+                        child: CircularProgressIndicator(
+                          backgroundColor: AppColors.primaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

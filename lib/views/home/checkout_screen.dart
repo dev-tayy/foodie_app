@@ -221,14 +221,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
               ],
             ),
-            YMargin(hp(24)),
-            ButtonWidget(
-              buttonColor: AppColors.primaryColor,
-              label: "Proceed to Payment",
-              onPressed: () async {
-                await showDeliveryDialog(context);
-              },
-              textColor: AppColors.white,
+            Expanded(child: YMargin(hp(24))),
+            Expanded(
+              child: ButtonWidget(
+                buttonColor: AppColors.primaryColor,
+                label: "Proceed to Payment",
+                onPressed: () async {
+                  await showDeliveryDialog(context);
+                },
+                textColor: AppColors.white,
+              ),
             )
           ],
         ),
