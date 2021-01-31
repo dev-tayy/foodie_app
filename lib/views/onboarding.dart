@@ -51,11 +51,13 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ),
           YMargin(40.0),
-          Container(
-            child: Image(
-              image: AssetImage('assets/images/onboarding.png'),
-              fit: BoxFit.fill,
-              width: wp(100),
+          Expanded(
+            child: Container(
+              child: Image(
+                image: AssetImage('assets/images/onboarding.png'),
+                fit: BoxFit.fill,
+                width: wp(100),
+              ),
             ),
           ),
           Padding(

@@ -64,8 +64,10 @@ class _LoginPageState extends State<LoginPage>
               child: Column(
                 children: [
                   YMargin(100),
-                  Image(
-                    image: AssetImage('assets/images/cheflogo.png'),
+                  Expanded(
+                    child: Image(
+                      image: AssetImage('assets/images/cheflogo.png'),
+                    ),
                   ),
                   SafeArea(
                     child: TabBar(

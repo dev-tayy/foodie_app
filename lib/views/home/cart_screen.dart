@@ -61,7 +61,7 @@ class CartScreen extends StatelessWidget {
             CartItem(),
             YMargin(hp(3)),
             CartItem(),
-            YMargin(hp(20)),
+            Expanded(child: YMargin(hp(20))),
             ButtonWidget(
               buttonColor: AppColors.primaryColor,
               label: "Proceed to Checkout",
