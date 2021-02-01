@@ -5,8 +5,8 @@ import 'package:foodie_app/utils/margin.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class OrderItem extends StatelessWidget {
-  const OrderItem(
+class SearchScreenItem extends StatelessWidget {
+  const SearchScreenItem(
       {Key key,
       @required this.image,
       @required this.foodLabel,
@@ -29,57 +29,51 @@ class OrderItem extends StatelessWidget {
       onTap: () {
         showBottomSheet(context);
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            width: containerWidth,
-            height: containerHeight,
-            padding: EdgeInsets.only(top: 5),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Wrap(
-              alignment: WrapAlignment.center,
+      child: Container(
+        width: containerWidth,
+        height: containerHeight,
+        padding: EdgeInsets.only(top: 5),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: image,
-                      height: imageHeight,
-                      width: imageWidth,
-                    ),
-                    YMargin(10),
-                    Text(
-                      foodLabel,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Rounded',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 17,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    YMargin(5),
-                    Text(
-                      foodPrice,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Rounded',
-                        fontWeight: FontWeight.w900,
-                        fontSize: 17,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                  ],
+                Image(
+                  image: image,
+                  height: imageHeight,
+                  width: imageWidth,
+                ),
+                YMargin(10),
+                Text(
+                  foodLabel,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Rounded',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 17,
+                    color: AppColors.black,
+                  ),
+                ),
+                YMargin(5),
+                Text(
+                  foodPrice,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Rounded',
+                    fontWeight: FontWeight.w900,
+                    fontSize: 17,
+                    color: AppColors.primaryColor,
+                  ),
                 ),
               ],
             ),
-          ),
-          XMargin(30),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -271,51 +265,3 @@ final List<Widget> imageSliders = imgList
           ),
         ))
     .toList();
-
-// Stack(
-//         fit: StackFit.passthrough,
-//         overflow: Overflow.visible,
-//         alignment: AlignmentDirectional.center,
-//         children: [
-//           Container(
-//             width: containerWidth,
-//             height: containerHeight,
-//             decoration: BoxDecoration(
-//               color: AppColors.white,
-//               borderRadius: BorderRadius.circular(30),
-//             ),
-//           ),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               Image(
-//                 image: image,
-//                 height: imageHeight,
-//                 width: imageWidth,
-//               ),
-//               YMargin(20),
-//               Text(
-//                 foodLabel,
-//                 textAlign: TextAlign.center,
-//                 style: TextStyle(
-//                   fontFamily: 'SF Pro Rounded',
-//                   fontWeight: FontWeight.w700,
-//                   fontSize: 22,
-//                   color: AppColors.black,
-//                 ),
-//               ),
-//               YMargin(20),
-//               Text(
-//                 foodPrice,
-//                 textAlign: TextAlign.center,
-//                 style: TextStyle(
-//                   fontFamily: 'SF Pro Rounded',
-//                   fontWeight: FontWeight.w900,
-//                   fontSize: 17,
-//                   color: AppColors.primaryColor,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),

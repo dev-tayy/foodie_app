@@ -148,17 +148,16 @@ class _LoginPageState extends State<LoginPage>
                                 fontSize: 17,
                                 color: AppColors.primaryColor),
                           ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, hp(20), 0, 0),
-                            child: ButtonWidget(
-                                label: 'Login',
-                                buttonColor: AppColors.primaryColor,
-                                textColor: AppColors.white,
-                                onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, AppDrawer.id);
-                                }),
-                          )
+                          YMargin(hp(5)),
+                          ButtonWidget(
+                              label: 'Login',
+                              buttonColor: AppColors.primaryColor,
+                              textColor: AppColors.white,
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, AppDrawer.id);
+                              }),
+                          YMargin(hp(5)),
                         ],
                       ),
                     ),
@@ -224,18 +223,16 @@ class _LoginPageState extends State<LoginPage>
                             obscureText: true,
                             maxLines: 1,
                           ),
-                          YMargin(hp(4)),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, hp(3), 0, 0),
-                            child: ButtonWidget(
-                                label: 'Sign up',
-                                buttonColor: AppColors.primaryColor,
-                                textColor: AppColors.white,
-                                onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, LoginPage.id);
-                                }),
-                          )
+                          YMargin(hp(5)),
+                          ButtonWidget(
+                              label: 'Sign up',
+                              buttonColor: AppColors.primaryColor,
+                              textColor: AppColors.white,
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, LoginPage.id);
+                              }),
+                          YMargin(hp(5)),
                         ],
                       ),
                     )

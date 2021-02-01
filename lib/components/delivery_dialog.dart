@@ -93,7 +93,7 @@ Future<void> showDeliveryDialog(BuildContext context) async {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                 child: Text(
                   'Proceed',
                   style: TextStyle(

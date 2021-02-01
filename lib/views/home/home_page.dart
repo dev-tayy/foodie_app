@@ -228,42 +228,54 @@ class _HomeScreenState extends State<HomeScreen>
                 child: TabBarView(controller: _tabController, children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        OrderItem(
-                          containerWidth: wp(50),
-                          containerHeight: hp(30),
-                          image: AssetImage('assets/images/food1.png'),
-                          foodLabel: 'Veggie\ntomato mix',
-                          foodPrice: 'N1,900',
-                        ),
-                        OrderItem(
-                          containerWidth: wp(50),
-                          containerHeight: hp(30),
-                          image: AssetImage('assets/images/food2.png'),
-                          foodLabel: 'Veggie\ntomato mix',
-                          foodPrice: 'N1,900',
-                        ),
-                      ],
+                    child: SingleChildScrollView(
+                      child: Row(
+                        children: [
+                          OrderItem(
+                            containerWidth: 170,
+                            containerHeight: 230,
+                            imageHeight: 130,
+                            imageWidth: 130,
+                            image: AssetImage('assets/images/food1.png'),
+                            foodLabel: 'Veggie\ntomato mix',
+                            foodPrice: 'N1,900',
+                          ),
+                          OrderItem(
+                            containerWidth: 170,
+                            containerHeight: 230,
+                            imageHeight: 130,
+                            imageWidth: 130,
+                            image: AssetImage('assets/images/food2.png'),
+                            foodLabel: 'Veggie\ntomato mix',
+                            foodPrice: 'N1,900',
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   OrderItem(
-                    containerWidth: wp(50),
-                    containerHeight: hp(30),
+                    containerWidth: 170,
+                    containerHeight: 230,
+                    imageHeight: 130,
+                    imageWidth: 130,
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',
                   ),
                   OrderItem(
-                    containerWidth: wp(50),
-                    containerHeight: hp(30),
+                    containerWidth: 170,
+                    containerHeight: 230,
+                    imageHeight: 130,
+                    imageWidth: 130,
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',
                   ),
                   OrderItem(
-                    containerWidth: wp(50),
-                    containerHeight: hp(30),
+                    containerWidth: 170,
+                    containerHeight: 230,
+                    imageHeight: 130,
+                    imageWidth: 130,
                     image: AssetImage('assets/images/food1.png'),
                     foodLabel: 'Veggie\ntomato mix',
                     foodPrice: 'N1,900',

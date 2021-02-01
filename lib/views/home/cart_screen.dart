@@ -14,64 +14,69 @@ class CartScreen extends StatelessWidget {
     final Function wp = Screen(context).wp;
     final Function hp = Screen(context).hp;
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        color: AppColors.backgroundShade3,
-        padding: EdgeInsets.only(
-          left: wp(7),
-          right: wp(7),
-          top: hp(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: AppColors.backgroundShade3,
+          padding: EdgeInsets.only(
+            left: wp(7),
+            right: wp(7),
+            top: hp(8),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                        onTap: () {},
+                        child: Icon(Icons.arrow_back_ios, size: 20)),
+                    Text(
+                      'Cart',
+                      style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18),
+                    ),
+                    Container()
+                  ],
+                ),
+              ),
+              YMargin(hp(4)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  GestureDetector(
-                      onTap: () {},
-                      child: Icon(Icons.arrow_back_ios, size: 20)),
-                  Text(
-                    'Cart',
-                    style: TextStyle(
-                        fontFamily: 'SF Pro Text',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18),
-                  ),
-                  Container()
+                  Icon(Icons.touch_app_outlined),
+                  XMargin(10),
+                  Text('swipe on an item to delete',
+                      style: TextStyle(fontSize: 12, fontFamily: 'SF Pro Text'))
                 ],
               ),
-            ),
-            YMargin(hp(4)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.touch_app_outlined),
-                XMargin(10),
-                Text('swipe on an item to delete',
-                    style: TextStyle(fontSize: 12, fontFamily: 'SF Pro Text'))
-              ],
-            ),
-            YMargin(hp(4)),
-            CartItem(),
-            YMargin(hp(3)),
-            CartItem(),
-            YMargin(hp(3)),
-            CartItem(),
-            Expanded(child: YMargin(hp(20))),
-            ButtonWidget(
-              buttonColor: AppColors.primaryColor,
-              label: "Proceed to Checkout",
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CheckoutScreen()));
-              },
-              textColor: AppColors.white,
-            )
-          ],
+              YMargin(hp(4)),
+              CartItem(),
+              YMargin(hp(3)),
+              CartItem(),
+              YMargin(hp(3)),
+              CartItem(),
+              Expanded(child: YMargin(hp(20))),
+              ButtonWidget(
+                buttonColor: AppColors.primaryColor,
+                label: "Proceed to Checkout",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CheckoutScreen()));
+                },
+                textColor: AppColors.white,
+              ),
+              Expanded(child: YMargin(hp(3))),
+            ],
+          ),
         ),
       ),
     );

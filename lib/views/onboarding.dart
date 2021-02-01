@@ -44,7 +44,7 @@ class OnBoardingScreen extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'SF Pro Rounded',
                       fontWeight: FontWeight.w900,
-                      fontSize: 65,
+                      fontSize: 45,
                       color: AppColors.white),
                 )
               ],

@@ -239,13 +239,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         borderRadius: BorderRadius.circular(20)))
               ],
             ),
-            YMargin(hp(35)),
+            Expanded(child: YMargin(hp(35))),
             ButtonWidget(
               buttonColor: AppColors.primaryColor,
               label: "Proceed to Payment",
               onPressed: () {},
               textColor: AppColors.white,
-            )
+            ),
+            YMargin(hp(2)),
           ],
         ),
       ),
