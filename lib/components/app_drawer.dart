@@ -22,7 +22,7 @@ class AppDrawer extends StatefulWidget {
 class _AppDrawerState extends State<AppDrawer> with TickerProviderStateMixin {
   int selectedMenuItemId;
 
- // final GlobalKey _scaffoldKey = new GlobalKey();
+  // final GlobalKey _scaffoldKey = new GlobalKey();
   DrawerScaffoldController controller = DrawerScaffoldController();
 
   List<Widget> widgets = [
@@ -72,6 +72,7 @@ class _AppDrawerState extends State<AppDrawer> with TickerProviderStateMixin {
             setState(() {
               selectedMenuItemId = itemId;
             });
+            print(selectedMenuItemId);
           },
         )
       ],
